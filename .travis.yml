@@ -11,9 +11,9 @@ script:
 
 after_success:
         - docker build -t jpf4e/multi-client ./client
-        - docker build -t jpf4e//multi-nginx ./nginx
-        - docker build -t jpf4e//multi-server ./server
-        - docker build -t jpf4e//multi-worker ./worker
+        - docker build -t jpf4e/multi-nginx ./nginx
+        - docker build -t jpf4e/multi-server ./server
+        - docker build -t jpf4e/multi-worker ./worker
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
         - docker push jpf4e/multi-client
         - docker push jpf4e/multi-nginx
